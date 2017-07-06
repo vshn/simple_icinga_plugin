@@ -7,7 +7,6 @@ simple icinga plugin helper module
 __author__ = "Andre Keller"
 __copyright__ = "Copyright (c) 2015, VSHN AG, info@vshn.ch"
 __license__ = 'BSD'
-__version__ = '0.1.0'
 
 import argparse
 import sys
