@@ -108,3 +108,10 @@ def exit_warning(msg, **kwargs):
     All additional arguments are passed as is to the msg.format() method.
     '''
     plugin_exit(msg, prefix='WARNING', code=1, **kwargs)
+
+def exit_unknown_on_exception(func):
+    '''Decorator that will exit with unknown state if an exception occurs.'''
+    try:
+        return func()
+    except Exception as exc:  # pylint: disable=broad-except
+        exit_unknown("Unhandled exception occured: %s" % (exc, ))
