@@ -64,7 +64,10 @@ def plugin_exit(msg, prefix, code, **kwargs):
     else:
         perfdata = ''
 
-    print('%s: %s%s' % (prefix, msg.format(**kwargs), perfdata))
+    if kwargs:
+        msg =msg.format(**kwargs)
+
+    print('%s: %s%s' % (prefix, msg, perfdata))
     sys.exit(code)
 
 def exit_ok(msg, **kwargs):
